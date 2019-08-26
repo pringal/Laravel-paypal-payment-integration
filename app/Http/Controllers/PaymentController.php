@@ -56,7 +56,7 @@ class PaymentController extends Controller
         $item_list->setItems(array($item_1));
         $amount = new Amount();
         $amount->setCurrency('USD')
-            ->setTotal($request->get('amount'));
+            ->setTotal($request->get('amount')); //This amount should be in multiplication of $item_1's amount and quantity. 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($item_list)
